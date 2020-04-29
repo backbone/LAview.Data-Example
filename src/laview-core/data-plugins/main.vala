@@ -65,7 +65,9 @@ namespace LAview.DataExample {
 				case "AnotherRequest": return "Another Answer";
 				case "Manual.SampleRequest": return "Manual Sample Answer";
 				case "MainChart":
-					var cache_dir = (host as IHostCore).get_cache_dir ();
+					var h = host as IHostCore;
+					assert (h != null);
+					var cache_dir = h.get_cache_dir ();
 					// TODO: save picture in path: cache_dir + "MainChart.png";
 
 					return "MainChart";
